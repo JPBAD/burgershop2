@@ -1,0 +1,12 @@
+{
+    "name": "jpnbadiane/php-burger",
+    "authors": [
+        {
+            "name": "Jean Paul Noel BADIANE",
+            "email": "jpnbadiane@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.1"
+    }
+}
