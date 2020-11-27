@@ -1,0 +1,99 @@
+body {
+    background: url(../images/bg.png);
+    font-family: 'Holtwood One SC' sans-serif;
+
+}
+
+h1 , h2{
+    color: #fff;
+    padding: 45px 0 80px 0;
+    text-align: center;
+    padding-bottom: 40px;
+    text-transform: uppercase;
+}
+
+h3 {
+    color: red;
+    font-weight: bold;
+    text-transform: uppercase;  
+}
+
+p {
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+ul,ol {
+    list-style:none;
+}
+img {
+    background: yellow;
+}
+
+
+section .heading {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+section .heading h2{
+    text-transform: uppercase;
+}
+
+
+
+/*MENU*/
+.navbar {
+    background: #888;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+}
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+.navbar li a {
+    color: #fff !important;
+}
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: rgb(146, 175, 228) !important;
+    background-color: #fff !important;
+}
+.navbar-default .navbar-toggle {
+    border-style: none;
+}
+
+.icon-bar {
+    background-color: #fff !important;
+}
+
+#menus .heading h2 {
+    color: #fff;
+}
+#menus .heading h4 {
+    color: #fff;
+}
+
+#menus .thumbnail img {
+    width: 100%;
+    height: 100%;
+    
+}
+
+input {
+    font-size: 12px;
+    background:  rgb(146, 175, 228);
+    color: #fff;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+}
