@@ -2,7 +2,9 @@
 <html lang="fr">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <head>
         <title>BURGER SHOP</title>
     </head>
@@ -14,6 +16,180 @@
         <li>{{item.menu}}</li>
         {% endfor %}
         </ul>
+
+        <div class="container site">
+            <h1 class="text-logo"><span class="glyphicon glyphicon-cutlery"></span> BURGER SHOP <span class="glyphicon glyphicon-cutlery"></span></h1>
+        </div>
+
+        <section id="menus">
+            <div class="container">
+                <h2 class="menus">MENUS</h2>
+                <div class="heading">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="thumbnail">
+                                <img src="images/m1.png" alt="menus">
+                                <div>8,90€</div>
+                                <div class="caption">
+                                    <h3>Menu Classic</h3>
+                                    <p>Sandwich: Burger, Salade, Tomate, Cornichon + Frites + Boisson</p>
+                                    <input type="submit" class="button" value="Commander">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="thumbnail">
+                                <img src="images/m2.png" alt="menus">
+                                <div>9,50€</div>
+                                <div class="caption">
+                                    <h3>Menu Bacon</h3>
+                                    <p>Sandwich: Burger, Fromage, Bacon, Salade, Tomate + Frites + Boisson</p>
+                                    <input type="submit" class="button" value="Commander">
+                                </div>
+                            </div>  
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="thumbnail">
+                                <img src="images/m3.png" alt="menus">
+                                <div>10,90€</div>
+                                <div class="caption">
+                                    <h3>Menu Big</h3>
+                                    <p>Sandwich: Double Burger, Fromage, Cornichon, Salade + Frites + Boisson</p>
+                                    <input type="submit" class="button" value="Commander">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="thumbnail">
+                                <img src="images/m4.png" alt="menus">
+                                <div>10,90€</div>
+                                <div class="caption">
+                                    <h3>Menu Chicken</h3>
+                                    <p>Sandwich: Poulet Frit, Tomate, Salade, Mayonnaise + Frites + Boisson</p>
+                                    <input type="submit" class="button" value="Commander">
+                                </div>   
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="thumbnail">
+                                <img src="images/m5.png" alt="menus">
+                                <div>9,90€</div>
+                                <div class="caption">
+                                    <h3>Menu Fish</h3>
+                                    <p>Sandwich: Poisson, Salade, Mayonnaise, Cornichon + Frites + Boisson</p>
+                                    <input type="submit" class="button" value="Commander">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="thumbnail">
+                                <img src="images/m6.png" alt="menus">
+                                <div>11,90€</div>
+                                <div class="caption">
+                                    <h3>M. Double Steak</h3>
+                                    <p>Sandwich: Double Burger, Fromage, Bacon, Salade, Tomate + Frites + Boisson</p>
+                                    <input type="submit" class="button" value="Commander">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <ul id="navigation">
+            {% for item in items %}
+            <li>{{item.burger}}</li>
+            {% endfor %}
+            </ul>
+            
+            <section id="burgers">
+                <div class="container">
+                    <h2 class="menus">BURGERS</h2>
+                    <div class="heading">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="thumbnail">
+                                    <img src="images/b1.png" alt="menus">
+                                    <div>5,90€</div>
+                                    <div class="caption">
+                                        <h3>Classic</h3>
+                                        <p>Sandwich: Burger, Salade, Tomate, Cornichon</p>
+                                        <input type="submit" class="button" value="Commander">
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-sm-4">
+                                    <div class="thumbnail">
+                                        <img src="images/b2.png" alt="menus">
+                                        <div>6,50€</div>
+                                        <div class="caption">
+                                            <h3>Bacon</h3>
+                                            <p>Sandwich: Burger, Fromage, Bacon, Salade, Tomate</p>
+                                            <input type="submit" class="button" value="Commander">
+                                        </div>
+                                    </div>
+                                </div>
+    
+                            <div class="col-sm-4">
+                                <div class="thumbnail">
+                                    <img src="images/b3.png" alt="menus">
+                                    <div>6,90€</div>
+                                    <div class="caption">
+                                        <h3>Big</h3>
+                                        <p>Sandwich: Double Burger, Fromage, Cornichon, Salade</p>
+                                        <input type="submit" class="button" value="Commander">
+                                    </div>
+                                 </div>
+                            </div>
+                        </div>
+    
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="thumbnail">
+                                        <img src="images/b4.png" alt="menus">
+                                        <div>5,90€</div>
+                                        <div class="caption">
+                                            <h3>Chicken</h3>
+                                            <p>Sandwich: Poulet Frit, Tomate, Salade, Mayonnaise</p>
+                                            <input type="submit" class="button" value="Commander">
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="col-sm-4">
+                                    <div class="thumbnail">
+                                        <img src="images/b5.png" alt="menus">
+                                        <div>6,90€</div>
+                                        <div class="caption">
+                                            <h3>Fish</h3>
+                                            <p>Sandwich: Poisson Pané, Salade, Mayonnaise, Cornichon</p>
+                                            <input type="submit" class="button" value="Commander">
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="col-sm-4">
+                                    <div class="thumbnail">
+                                        <img src="images/b6.png" alt="menus">
+                                         <div>7,50€</div>
+                                        <div class="caption">
+                                            <h3>Double Steak</h3>
+                                            <p>Sandwich: Double Burger, Fromage, Bacon, Salade, Tomate</p>
+                                            <input type="submit" class="button" value="Commander">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </section>
 </body>
 
 </html>
