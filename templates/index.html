@@ -63,81 +63,21 @@
                 <h2 class="menus">BURGERS</h2>
                 <div class="heading">
                     <div class="row">
-                        <div class="col-sm-4">
-                            <div class="thumbnail">
-                                <img src="images/b1.png" alt="menus">
-                                <div>5,90€</div>
-                                <div class="caption">
-                                    <h3>Classic</h3>
-                                    <p>Sandwich: Burger, Salade, Tomate, Cornichon</p>
-                                    <input type="submit" class="button" value="Commander">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4">
+                        {% for item in burgers %}
+                            <div class="col-sm-4">
                                 <div class="thumbnail">
-                                    <img src="images/b2.png" alt="menus">
-                                    <div>6,50€</div>
+                                    <img src="{{item.image}}" alt="menus">
+                                    <div>{{item.price}}</div>
                                     <div class="caption">
-                                        <h3>Bacon</h3>
-                                        <p>Sandwich: Burger, Fromage, Bacon, Salade, Tomate</p>
+                                        <h3>{{item.name}}</h3>
+                                        <p>{{item.description}}</p>
                                         <input type="submit" class="button" value="Commander">
                                     </div>
                                 </div>
                             </div>
-
-                        <div class="col-sm-4">
-                            <div class="thumbnail">
-                                <img src="images/b3.png" alt="menus">
-                                <div>6,90€</div>
-                                <div class="caption">
-                                    <h3>Big</h3>
-                                    <p>Sandwich: Double Burger, Fromage, Cornichon, Salade</p>
-                                    <input type="submit" class="button" value="Commander">
-                                </div>
-                             </div>
-                        </div>
+                        {% endfor %}
                     </div>
-
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="thumbnail">
-                                    <img src="images/b4.png" alt="menus">
-                                    <div>5,90€</div>
-                                    <div class="caption">
-                                        <h3>Chicken</h3>
-                                        <p>Sandwich: Poulet Frit, Tomate, Salade, Mayonnaise</p>
-                                        <input type="submit" class="button" value="Commander">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-4">
-                                <div class="thumbnail">
-                                    <img src="images/b5.png" alt="menus">
-                                    <div>6,90€</div>
-                                    <div class="caption">
-                                        <h3>Fish</h3>
-                                        <p>Sandwich: Poisson Pané, Salade, Mayonnaise, Cornichon</p>
-                                        <input type="submit" class="button" value="Commander">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-4">
-                                <div class="thumbnail">
-                                    <img src="images/b6.png" alt="menus">
-                                     <div>7,50€</div>
-                                    <div class="caption">
-                                        <h3>Double Steak</h3>
-                                        <p>Sandwich: Double Burger, Fromage, Bacon, Salade, Tomate</p>
-                                        <input type="submit" class="button" value="Commander">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                </div>
             </section>
 
             <section id="salades">
@@ -145,67 +85,19 @@
                     <h2 class="menus">SALADES</h2>
                     <div class="heading">
                         <div class="row">
-                            <div class="col-sm-4">
-                                <div class="thumbnail">
-                                    <img src="images/sa1.png" alt="menus">
-                                    <div>8,90€</div>
-                                    <div class="caption">
-                                        <h3>Caesar Poulet Pané</h3>
-                                        <p>Poulet Pané, Salade, Tomate et la fameuse sauce Caesar</p>
-                                    <input type="submit" class="button" value="Commander">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <div class="thumbnail">
-                                <img src="images/sa2.png" alt="menus">
-                                <div>8,90€</div>
-                                <div class="caption">
-                                    <h3>Caesar Poulet Grillé</h3>
-                                    <p>Poulet Grillé, Salade, Tomate et la fameuse sauce Caesar</p>
-                                    <input type="submit" class="button" value="Commander">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <div class="thumbnail">
-                                <img src="images/sa3.png" alt="menus">
-                                <div>5,90€</div>
-                                <div class="caption">
-                                    <h3>Salade Light</h3>
-                                    <p>Salade, Tomate, Concombre, Maïs et Vinaigre balsamique</p>
-                                    <input type="submit" class="button" value="Commander">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="thumbnail">
-                                    <img src="images/sa4.png" alt="menus">
-                                    <div>7,90€</div>
-                                    <div class="caption">
-                                        <h3>Poulet Pané</h3>
-                                        <p>Poulet Pané, Salade, Tomate et la sauce de votre choix</p>
+                            {% for item in salades %}
+                                <div class="col-sm-4">
+                                    <div class="thumbnail">
+                                        <img src="{{item.image}}" alt="menus">
+                                        <div>{{item.price}}</div>
+                                        <div class="caption">
+                                            <h3>{{item.name}}</h3>
+                                            <p>{{item.description}}</p>
                                         <input type="submit" class="button" value="Commander">
                                     </div>
                                 </div>
                             </div>
-
-                        <div class="col-sm-4">
-                            <div class="thumbnail">
-                                <img src="images/sa5.png" alt="menus">
-                                <div>7,90€</div>
-                                <div class="caption">
-                                    <h3>Poulet Grillé</h3>
-                                    <p>Poulet Grillé, Salade, Tomate et la sauce de votre choix'</p>
-                                    <input type="submit" class="button" value="Commander">
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </section>
@@ -215,67 +107,19 @@
                     <h2 class="menus">SNACKS</h2>
                     <div class="heading">
                         <div class="row">
-                            <div class="col-sm-4">
-                                <div class="thumbnail">
-                                    <img src="images/s1.png" alt="menus">
-                                    <div>3,90€</div>
-                                    <div class="caption">
-                                        <h3>Frites</h3>
-                                        <p>Pommes de terre frites</p>
-                                        <input type="submit" class="button" value="Commander">
+                            {% for item in snacks %}
+                                <div class="col-sm-4">
+                                    <div class="thumbnail">
+                                        <img src="{{item.image}}" alt="menus">
+                                        <div>{{item.price}}</div>
+                                        <div class="caption">
+                                            <h3>{{item.name}}</h3>
+                                            <p>{{item.description}}</p>
+                                            <input type="submit" class="button" value="Commander">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="col-sm-4">
-                                <div class="thumbnail">
-                                    <img src="images/s2.png" alt="menus">
-                                    <div>3,40€</div>
-                                    <div class="caption">
-                                        <h3>Onion Rings</h3>
-                                        <p>Rondelles d''oignon frits</p>
-                                        <input type="submit" class="button" value="Commander">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-4">
-                                <div class="thumbnail">
-                                    <img src="images/s3.png" alt="menus">
-                                    <div>5,90€</div>
-                                    <div class="caption">
-                                        <h3>Nuggets</h3>
-                                        <p>Nuggets de poulet frits</p>
-                                        <input type="submit" class="button" value="Commander">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                             <div class="col-sm-4">
-                                <div class="thumbnail">
-                                    <img src="images/s4.png" alt="menus">
-                                    <div>3,50€</div>
-                                    <div class="caption">
-                                        <h3>Nuggets Fromage</h3>
-                                        <p>Nuggets de fromage frits</p>
-                                        <input type="submit" class="button" value="Commander">
-                                    </div>
-                                </div>
-                             </div>
-
-                            <div class="col-sm-4">
-                                <div class="thumbnail">
-                                    <img src="images/s5.png" alt="menus">
-                                    <div>5,90€</div>
-                                    <div class="caption">
-                                        <h3>Ailes de Poulet</h3>
-                                        <p>Ailes de poulet Barbecue</p>
-                                        <input type="submit" class="button" value="Commander">
-                                    </div>
-                                </div>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
             </section>
@@ -285,81 +129,21 @@
                     <h2 class="menus">BOISSONS</h2>
                     <div class="heading">
                         <div class="row">
-                            <div class="col-sm-4">
-                                <div class="thumbnail">
-                                    <img src="images/bo1.png" alt="menus">
-                                    <div>1,90€</div>
-                                    <div class="caption">
-                                        <h3>Coca-Cola</h3>
-                                        <p>Au choix: Petit, Moyen ou Grand</p>
-                                        <input type="submit" class="button" value="Commander">
+                            {% for item in boissons %}
+                                <div class="col-sm-4">
+                                    <div class="thumbnail">
+                                        <img src="{{item.image}}" alt="menus">
+                                        <div>{{item.price}}</div>
+                                                <div class="caption">
+                                            <h3>{{item.name}}</h3>
+                                            <p>{{item.description}}</p>
+                                            <input type="submit" class="button" value="Commander">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-
-                        <div class="col-sm-4">
-                            <div class="thumbnail">
-                                <img src="images/bo2.png" alt="menus">
-                                <div>1,90€</div>
-                                <div class="caption">
-                                    <h3>Coca-Cola Light</h3>
-                                    <p>Au choix: Petit, Moyen ou Grand</p>
-                                    <input type="submit" class="button" value="Commander">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <div class="thumbnail">
-                                <img src="images/bo3.png" alt="menus">
-                                <div>1,90€</div>
-                                <div class="caption">
-                                    <h3>Coca-Cola Zéro</h3>
-                                    <p>Au choix: Petit, Moyen ou Grand</p>
-                                    <input type="submit" class="button" value="Commander">
-                                </div>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div class="thumbnail">
-                                <img src="images/bo4.png" alt="menus">
-                                <div>1,90€</div>
-                                <div class="caption">
-                                    <h3>Fanta</h3>
-                                    <p>Au choix: Petit, Moyen ou Grand</p>
-                                    <input type="submit" class="button" value="Commander">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <div class="thumbnail">
-                                <img src="images/bo5.png" alt="menus">
-                                <div>1,90€</div>
-                                <div class="caption">
-                                    <h3>Sprite</h3>
-                                    <p>Au choix: Petit, Moyen ou Grand</p>
-                                    <input type="submit" class="button" value="Commander">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <div class="thumbnail">
-                                <img src="images/bo6.png" alt="menus">
-                                <div>1,90€</div>
-                                <div class="caption">
-                                    <h3>Nestea</h3>
-                                    <p>Au choix: Petit, Moyen ou Grand</p>
-                                    <input type="submit" class="button" value="Commander">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </section>
 
             <section id="desserts">
@@ -367,68 +151,23 @@
                     <h2 class="menus">DESSERTS</h2>
                     <div class="heading">
                         <div class="row">
-                            <div class="col-sm-4">
-                                <div class="thumbnail">
-                                    <img src="images/d1.png" alt="menus">
-                                    <div>4,90€</div>
-                                    <div class="caption">
-                                        <h3>Fondant au choco</h3>
-                                        <p>Au choix: Chocolat Blanc ou au lait</p>
-                                        <input type="submit" class="button" value="Commander">
+                            {% for item in desserts %}
+                                <div class="col-sm-4">
+                                    <div class="thumbnail">
+                                        <img src="{{item.image}}" alt="menus">
+                                        <div>{{item.price}}</div>
+                                        <div class="caption">
+                                            <h3>{{item.name}}</h3>
+                                            <p>{{item.description}}</p>
+                                            <input type="submit" class="button" value="Commander">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        <div class="col-sm-4">
-                            <div class="thumbnail">
-                                <img src="images/d2.png" alt="menus">
-                                <div>2,90€</div>
-                                <div class="caption">
-                                    <h3>Muffin</h3>
-                                    <p>Au choix: Au fruits ou au chocolat</p>
-                                    <input type="submit" class="button" value="Commander">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="thumbnail">
-                                <img src="images/d3.png" alt="menus">
-                                <div>2,90€</div>
-                                <div class="caption">
-                                    <h3>Beignet</h3>
-                                    <p>Au choix: Au chocolat ou à la vanille</p>
-                                    <input type="submit" class="button" value="Commander">
-                                </div>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div class="thumbnail">
-                                <img src="images/d4.png" alt="menus">
-                                <div>3,90€</div>
-                                <div class="caption">
-                                    <h3>Milkshake</h3>
-                                    <p>Au choix: Fraise, Vanille ou Chocolat</p>
-                                    <input type="submit" class="button" value="Commander">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="thumbnail">
-                                <img src="images/d5.png" alt="menus">
-                                <div>4,90€</div>
-                                <div class="caption">
-                                    <h3>Sundae</h3>
-                                    <p>Au choix: Fraise, Caramel ou Chocolat</p>
-                                    <input type="submit" class="button" value="Commander">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </section>
-
 
     </body>
 
-    </html>
+</html>
