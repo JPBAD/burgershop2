@@ -4,6 +4,29 @@ require_once 'vendor/autoload.php';
 $loader = new \Twig\Loader\FilesystemLoader('templates');
 $twig = new \Twig\Environment($loader, []);
 
+try { 
+    $db = new \PDO(
+        "mysql:host=localhost;dbname=burger_shop",
+        "root",
+        "root"
+    );
+
+} catch (PDOException $e) { 
+    print $e->getMessage();
+}
+
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$menusQuery = $db->prepare('SELECT * FROM products where type= "menu"');
+$menusQuery->execute();
+$menus=$menusQuery->fetchAll();
+
+$burgersQuery = $db->prepare('SELECT * FROM products where type= "burger"');
+$burgersQuery->execute();
+$burgers=$burgersQuery->fetchAll();
+
+
+
 echo $twig->render('index.html', [
     'myNavbar' => [
         [ 'href' => '#menus', 'name' => 'Menus'],
@@ -14,95 +37,9 @@ echo $twig->render('index.html', [
         [ 'href' => '#desserts', 'name' => 'Desserts' ],
         [ 'href' => '#panier', 'name' => 'Panier' ]
     ],
-    'menus' => [
-         [
-            'image' => 'images/m1.png',
-            'price' => '8,90€',
-            'name' => 'Menu Classic',
-            'description' => 'Sandwich: Burger, Salade, Tomate, Cornichon + Frites + Boisson'
-        ],
-        [
-            'image' => 'images/m2.png',
-            'price' => '9,50€',
-            'name' => 'Menu Bacon',
-            'description' => 'Sandwich: Burger, Fromage, Bacon, Salade, Tomate + Frites + Boisson'
-        ],
-        [
-            'image' => 'images/m3.png',
-            'price' => '10,90€',
-            'name' => 'Menu Big',
-            'description' => 'Sandwich: Double Burger, Fromage, Cornichon, Salade + Frites + Boisson'
-        ],
-        [
-            'image' => 'images/m4.png',
-            'price' => '10,90€',
-            'name' => 'Menu Chicken',
-            'description' => 'Poulet Frit, Tomate, Salade, Mayonnaise + Frites + Boisson'
-        ],
-        [
-            'image' => 'images/m5.png',
-            'price' => '9,90€',
-            'name' => 'Menu Fish',
-            'description' => 'Poisson, Salade, Mayonnaise, Cornichon + Frites + Boisson'
-        ],
-        [  
-            'image' => 'images/m6.png',
-            'price' => '11,90€',
-            'name' => 'Menu Double Steak',
-            'description' => 'Sandwich: Double Burger, Fromage, Bacon, Salade, Tomate + Frites + Boisson'
-        ]
-        ],
-    'burgers' => [
-        [
-           'image' => 'images/b1.png',
-           'price' => '5,90€',
-           'name' => 'Classic',
-           'description' => 'Burger, Salade, Tomate, Cornichon, Oignons'
-       ],
-       [
-           'image' => 'images/b2.png',
-           'price' => '6,50€',
-           'name' => 'Bacon',
-           'description' => 'Sandwich: Burger, Fromage, Bacon, Salade, Tomate'
-       ],
-       [
-           'image' => 'images/b3.png',
-           'price' => '6,90€',
-           'name' => 'Big',
-           'description' => 'Sandwich: Double Burger, Fromage, Cornichon, Salade'
-       ],
-       [
-           'image' => 'images/b4.png',
-           'price' => '5,90€',
-           'name' => 'Chicken',
-           'description' => 'Poulet Frit, Tomate, Salade, Mayonnaise, Ketchup'
-       ],
-       [
-           'image' => 'images/b5.png',
-           'price' => '6,90€',
-           'name' => 'Fish',
-           'description' => 'Poisson Pané, Salade, Mayonnaise, Cornichon'
-       ],
-       [  
-           'image' => 'images/b6.png',
-           'price' => '7,50€',
-           'name' => 'Double Steak',
-           'description' => 'Double Burger, Fromage, Bacon, Salade, Tomate'
-       ]
-       ],
+    'menus' => $menus,
+    'burgers' =>$burgers,
     'salades' => [
-        [
-           'image' => 'images/sa1.png',
-           'price' => '8,90€',
-           'name' => 'Caesar Poulet Pané',
-           'description' => 'Poulet Pané, Salade, Tomate et la fameuse sauce Caesar'
-       ],
-       [
-           'image' => 'images/sa2.png',
-           'price' => '8,90€',
-           'name' => 'Caesar Poulet Grillé',
-           'description' => 'Poulet Grillé, Salade, Tomate et la fameuse sauce Caesar'
-       ],
        [
            'image' => 'images/sa3.png',
            'price' => '5,90€',
@@ -120,7 +57,19 @@ echo $twig->render('index.html', [
            'price' => '7,90€',
            'name' => 'Poulet Grillé',
            'description' => 'Poulet Grillé, Salade, Tomate et la sauce de votre choix'
-       ]
+       ],
+       [
+           'image' => 'images/sa1.png',
+           'price' => '8,90€',
+           'name' => 'Caesar Poulet Pané',
+           'description' => 'Poulet Pané, Salade, Tomate et la fameuse sauce Caesar'
+        ],
+        [
+           'image' => 'images/sa2.png',
+           'price' => '8,90€',
+           'name' => 'Caesar Poulet Grillé',
+           'description' => 'Poulet Grillé, Salade, Tomate et la fameuse sauce Caesar'
+        ]
        ],
     'snacks' => [
         [
