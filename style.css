@@ -1,5 +1,5 @@
 body {
-    background: url(images/background.png);
+    background: url(images/background-bois.jpg);
     font-family: 'Holtwood One SC' sans-serif;
     background-size: 100% 100%;
 }
@@ -28,7 +28,7 @@ ul,ol {
     list-style:none;
 }
 img {
-    background: yellow;
+    background:yellow;
 }
 
 

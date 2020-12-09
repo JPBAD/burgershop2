@@ -17,7 +17,7 @@ try {
 
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$menusQuery = $db->prepare('SELECT * FROM products where type= "menu"'); //dynamisation des menus
+$menusQuery = $db->prepare('SELECT * FROM products where type= "menu"'); //dynamisation des menus / Variables stockées dans menusQuery
 $menusQuery->execute();
 $menus=$menusQuery->fetchAll();
 
@@ -53,10 +53,30 @@ echo $twig->render('index.html', [
         [ 'href' => '#desserts', 'name' => 'Desserts' ],
         [ 'href' => '#panier', 'name' => 'Panier' ]
     ],
-    'menus' => $menus,
+    'menus' => $menus, //dynamisme menus
     'burgers' =>$burgers,
-    'salades' =>$salades, //dynamisme en cours
+    'salades' =>$salades, 
     'snacks' =>$snacks, 
     'boissons' =>$boissons, 
     'desserts' =>$desserts, 
 ]);
+
+function creationPanier(){
+    session_start();
+    /* Initialisation du panier */
+    $_SESSION['panier'] = array();
+    /* Subdivision du panier */
+    $_SESSION['panier']['name'] = array();
+    $_SESSION['panier']['quantity'] = array();
+    $_SESSION['panier']['price'] = array();
+}
+
+function montantGlobal(){
+    $total=0;
+    for($i = 0; $i < count($_SESSION['panier']['name']); $i++)
+    {
+       $total += $_SESSION['panier']['quantity'][$i] * $_SESSION['panier']['price'][$i];
+    }
+    return $total;
+ }
+?>
