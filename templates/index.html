@@ -27,6 +27,9 @@
                                 <a href="{{item.href}}">{{item.name}}</a>
                             </li>
                         {% endfor %}
+                        <li>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#cartModal">Panier</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -49,7 +52,8 @@
                                     <div class="caption">
                                         <h3>{{item.name}}</h3>
                                         <p>{{item.description}}</p>
-                                        <input type="submit" class="button" value="Commander">
+                                        {# <input type="submit" class="button" value="Commander"> #}
+                                        <a href="index.php?action=addToCart&product_id={{item.id}}"></a>
                                     </div>
                                 </div>
                             </div>
@@ -168,6 +172,22 @@
                     </div>
             </section>
 
+            <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Cart modal</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    {# À faire : une boucle pour afficher tout les produits du panier #}
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
     </body>
-
 </html>
